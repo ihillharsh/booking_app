@@ -2,6 +2,7 @@ import 'package:app_initial_structure/core/config/router/app_router.dart';
 import 'package:app_initial_structure/core/theme/app_colors.dart';
 import 'package:app_initial_structure/core/theme/app_text_styles.dart';
 import 'package:app_initial_structure/core/utils/size_utils.dart';
+import 'package:app_initial_structure/core/widgets/buttons/primary_button.dart';
 import 'package:app_initial_structure/core/widgets/inputs/common_appbar.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -143,25 +144,11 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
               SizedBox(height: 32.h),
 
               // Reset Password Button
-              SizedBox(
+              PrimaryButton(
+                text: 'Reset Password',
+                onPressed: _handleVerifyOtp,
                 width: double.maxFinite,
                 height: 56.h,
-                child: ElevatedButton(
-                  onPressed: _handleVerifyOtp,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(28.h),
-                    ),
-                  ),
-                  child: Text(
-                    'Reset Password',
-                    style: AppTextStyles.instance.button.copyWith(
-                      color: AppColors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
               ),
               SizedBox(height: 24.h),
 

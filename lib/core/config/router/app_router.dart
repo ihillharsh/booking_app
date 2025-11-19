@@ -12,6 +12,8 @@ import '../../../features/favourite/favourite_page.dart';
 import '../../../features/settings/settings_page.dart';
 import '../../../features/profile/presentation/profile_page.dart';
 import '../../../features/profile/presentation/profile_detail_page.dart';
+import '../../../features/search/search_page.dart';
+import '../../../features/salon_details/salon_details_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -27,12 +29,13 @@ class AppRouter extends _$AppRouter {
     AutoRoute(page: OtpVerificationRoute.page),
     AutoRoute(page: ResetPasswordRoute.page),
     AutoRoute(page: ProfileDetailRoute.page),
+
     AutoRoute(
       page: MainRoute.page,
       children: [
         AutoRoute(page: HomeRoute.page),
-        AutoRoute(page: FavouriteRoute.page),
-        AutoRoute(page: SettingsRoute.page),
+        AutoRoute(page: SearchRoute.page),
+        AutoRoute(page: SalonDetailsRoute.page),
         AutoRoute(page: ProfileRoute.page),
       ],
     ),

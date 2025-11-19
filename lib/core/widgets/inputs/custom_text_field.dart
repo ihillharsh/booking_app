@@ -25,6 +25,9 @@ class CustomTextField extends StatelessWidget {
   final InputBorder? disableBorder;
   final InputBorder? errorBorder;
   final EdgeInsetsGeometry? contentPadding;
+  final FocusNode? focusNode;
+  final void Function(String)? onChanged;
+  final void Function(String)? onFieldSubmitted;
 
   const CustomTextField({
     super.key,
@@ -47,7 +50,10 @@ class CustomTextField extends StatelessWidget {
     this.enableBorder,
     this.focusBorder,
     this.errorBorder,
-    this.contentPadding
+    this.contentPadding,
+    this.focusNode,
+    this.onChanged,
+    this.onFieldSubmitted
   });
 
   @override
@@ -58,6 +64,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       keyboardType: keyboardType,
       maxLines: maxLines,
+      focusNode: focusNode,
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
@@ -80,6 +87,8 @@ class CustomTextField extends StatelessWidget {
       onTapOutside: (event) {
         UtilityFunctions.hideKeyboard(context);
       },
+      onChanged: onChanged,
+      onFieldSubmitted: onFieldSubmitted,
     );
   }
 }

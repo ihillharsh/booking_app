@@ -7,6 +7,7 @@ import 'package:app_initial_structure/gen/assets.gen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/inputs/custom_text_field.dart';
 import 'login_page.dart';
 
@@ -137,32 +138,15 @@ class _SignupPageState extends State<SignupPage> {
                 ),
 
                 // Create Account Button
-                SizedBox(
+                PrimaryButton(
+                  text: 'Create Account',
+                  onPressed: _agreeToTerms
+                      ? () {
+                          context.router.pushAndPopUntil(HomeRoute(), predicate: (route) => true,);
+                        }
+                      : null,
                   width: double.infinity,
                   height: 56.h,
-                  child: ElevatedButton(
-                    onPressed:
-                        _agreeToTerms
-                            ? () {
-                          context.router.pushAndPopUntil(HomeRoute(), predicate: (route) => true,);
-
-                            }
-                            : null,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primary,
-                      disabledBackgroundColor: AppColors.grey,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(28.h),
-                      ),
-                    ),
-                    child: Text(
-                      'Create Account',
-                      style: AppTextStyles.instance.button.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                 ),
                 SizedBox.shrink(),
                 // Or Sign up With

@@ -77,6 +77,22 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ResetPasswordPage(),
       );
     },
+    SalonDetailsRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<SalonDetailsRouteArgs>(
+          orElse: () =>
+              SalonDetailsRouteArgs(salonId: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SalonDetailsPage(salonId: args.salonId),
+      );
+    },
+    SearchRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SearchPage(),
+      );
+    },
     SettingsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -264,6 +280,50 @@ class ResetPasswordRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ResetPasswordRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SalonDetailsPage]
+class SalonDetailsRoute extends PageRouteInfo<SalonDetailsRouteArgs> {
+  SalonDetailsRoute({
+    required String salonId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SalonDetailsRoute.name,
+          args: SalonDetailsRouteArgs(salonId: salonId),
+          rawPathParams: {'id': salonId},
+          initialChildren: children,
+        );
+
+  static const String name = 'SalonDetailsRoute';
+
+  static const PageInfo<SalonDetailsRouteArgs> page =
+      PageInfo<SalonDetailsRouteArgs>(name);
+}
+
+class SalonDetailsRouteArgs {
+  const SalonDetailsRouteArgs({required this.salonId});
+
+  final String salonId;
+
+  @override
+  String toString() {
+    return 'SalonDetailsRouteArgs{salonId: $salonId}';
+  }
+}
+
+/// generated route for
+/// [SearchPage]
+class SearchRoute extends PageRouteInfo<void> {
+  const SearchRoute({List<PageRouteInfo>? children})
+      : super(
+          SearchRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

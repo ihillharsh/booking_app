@@ -53,6 +53,8 @@ dependencies:
   cached_network_image: ^3.3.0
   shimmer: ^3.0.0
   pinput: ^5.0.0
+  carousel_slider: ^5.0.0
+  smooth_page_indicator: ^1.2.0
   
   # Utilities
   logger: ^2.0.2

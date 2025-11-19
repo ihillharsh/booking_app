@@ -67,6 +67,7 @@ class AppTextStyles {
     fontSize: 16.fSize,
     fontWeight: FontWeight.bold,
     letterSpacing: 0.5,
+    color: AppColors.white
   );
 
   TextStyle get bodyMedium => TextStyle(
@@ -91,6 +92,7 @@ class AppTextStyles {
     fontSize: 12.fSize,
     fontWeight: FontWeight.normal,
     letterSpacing: 0.4,
+    color: AppColors.white
   );
 
   TextStyle get bodySmallSemibold => TextStyle(
@@ -110,7 +112,7 @@ class AppTextStyles {
   TextStyle get button => TextStyle(
     fontSize: 16.fSize,
     fontWeight: FontWeight.w600,
-    letterSpacing: 1.25,
+    letterSpacing: 1,
   );
 
   // Caption

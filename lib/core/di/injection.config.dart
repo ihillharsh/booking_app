@@ -42,12 +42,17 @@ import 'package:app_initial_structure/features/profile/domain/usecases/change_th
     as _i319;
 import 'package:app_initial_structure/features/profile/presentation/bloc/profile_bloc.dart'
     as _i788;
+import 'package:app_initial_structure/features/salon_details/bloc/salon_details_bloc.dart'
+    as _i83;
+import 'package:app_initial_structure/features/search/bloc/search_bloc.dart'
+    as _i725;
 import 'package:app_initial_structure/features/settings/bloc/settings_bloc.dart'
     as _i131;
 import 'package:app_initial_structure/features/splash/bloc/splash_bloc.dart'
     as _i129;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
+import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -65,6 +70,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i736.AuthRemoteDatasource>(() => _i736.AuthRemoteDatasource());
     gh.factory<_i1049.FavouriteBloc>(() => _i1049.FavouriteBloc());
     gh.factory<_i287.NavigationBloc>(() => _i287.NavigationBloc());
+    gh.factory<_i83.SalonDetailsBloc>(() => _i83.SalonDetailsBloc());
     gh.lazySingleton<_i220.AuthRepository>(() => _i857.AuthRepositoryImpl(
           gh<_i736.AuthRemoteDatasource>(),
           gh<_i668.SecureStorage>(),
@@ -77,6 +83,8 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i1022.LoginUseCase(gh<_i220.AuthRepository>()));
     gh.factory<_i354.LogoutUseCase>(
         () => _i354.LogoutUseCase(gh<_i220.AuthRepository>()));
+    gh.factory<_i725.SearchBloc>(
+        () => _i725.SearchBloc(gh<_i460.SharedPreferences>()));
     gh.lazySingleton<_i434.PreferencesRepository>(() =>
         _i447.PreferencesRepositoryImpl(gh<_i304.PreferencesDataSource>()));
     gh.factory<_i743.ChangeLanguageUseCase>(

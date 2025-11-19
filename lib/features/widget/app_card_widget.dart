@@ -50,7 +50,7 @@ class SpecialOfferCard extends StatelessWidget {
             children: [
               AppImage(
                 imagePath:
-                'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800',
+                    'https://cdn.pixabay.com/photo/2023/12/01/14/34/haircut-8423833_1280.jpg',
                 radius: BorderRadius.circular(20.h),
                 height: 200.h,
                 width: double.maxFinite,
@@ -59,7 +59,10 @@ class SpecialOfferCard extends StatelessWidget {
 
               /// MAIN CONTENT
               Padding(
-                padding: EdgeInsets.all(10.h),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10.h,
+                  vertical: showDetails ? 10.h : 0,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -77,8 +80,7 @@ class SpecialOfferCard extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   name,
-                                  style:
-                                  AppTextStyles.instance.bodyLargeBold,
+                                  style: AppTextStyles.instance.bodyLargeBold,
                                   overflow: TextOverflow.visible,
                                   softWrap: true,
                                 ),
@@ -87,12 +89,12 @@ class SpecialOfferCard extends StatelessWidget {
                                 Text(
                                   isOpen ? 'Open' : 'Closed',
                                   style: AppTextStyles
-                                      .instance.bodyLargeSemibold
+                                      .instance
+                                      .bodyLargeSemibold
                                       .copyWith(
-                                    color: isOpen
-                                        ? Colors.green
-                                        : Colors.red,
-                                  ),
+                                        color:
+                                            isOpen ? Colors.green : Colors.red,
+                                      ),
                                 ),
                             ],
                           ),
@@ -103,9 +105,10 @@ class SpecialOfferCard extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 AppImage(
-                                  imagePath: isSalon
-                                      ? Assets.icons.slonIcon.path
-                                      : Assets.icons.restaurant.path,
+                                  imagePath:
+                                      isSalon
+                                          ? Assets.icons.slonIcon.path
+                                          : Assets.icons.restaurant.path,
                                   height: 20.h,
                                   color: AppColors.black,
                                 ),
@@ -115,8 +118,10 @@ class SpecialOfferCard extends StatelessWidget {
                                     isSalon
                                         ? 'Hair Cut, Facial, Blow Dry, Hair Styling'
                                         : 'Popular Dishes Available',
-                                    style: AppTextStyles
-                                        .instance.bodyMediumSemibold,
+                                    style:
+                                        AppTextStyles
+                                            .instance
+                                            .bodyMediumSemibold,
                                     overflow: TextOverflow.visible,
                                     softWrap: true,
                                   ),
@@ -137,8 +142,7 @@ class SpecialOfferCard extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   location,
-                                  style:
-                                  AppTextStyles.instance.bodyMedium,
+                                  style: AppTextStyles.instance.bodyMedium,
                                   overflow: TextOverflow.visible,
                                   softWrap: true,
                                 ),
@@ -159,8 +163,7 @@ class SpecialOfferCard extends StatelessWidget {
                                 Expanded(
                                   child: Text(
                                     'Veg only',
-                                    style:
-                                    AppTextStyles.instance.bodyMedium,
+                                    style: AppTextStyles.instance.bodyMedium,
                                     softWrap: true,
                                   ),
                                 ),
@@ -196,8 +199,7 @@ class SpecialOfferCard extends StatelessWidget {
               top: 180.h,
               left: 10.h,
               child: Container(
-                padding:
-                EdgeInsets.symmetric(horizontal: 10.h, vertical: 6),
+                padding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 6),
                 decoration: BoxDecoration(
                   color: AppColors.white,
                   borderRadius: BorderRadius.circular(20.h),
@@ -218,24 +220,18 @@ class SpecialOfferCard extends StatelessWidget {
                       height: 20.h,
                     ),
                     ShaderMask(
-                      shaderCallback: (bounds) =>
-                          LinearGradient(
+                      shaderCallback:
+                          (bounds) => LinearGradient(
                             colors: [
                               AppColors.discountBegin,
                               AppColors.discountEnd,
                             ],
                           ).createShader(
-                            Rect.fromLTWH(
-                              0,
-                              0,
-                              bounds.width,
-                              bounds.height,
-                            ),
+                            Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                           ),
                       child: Text(
                         'Save up to ${discount!.toStringAsFixed(0)}%',
-                        style: AppTextStyles
-                            .instance.bodyMediumSemibold,
+                        style: AppTextStyles.instance.bodyMediumSemibold,
                       ),
                     ),
                   ],
@@ -248,8 +244,7 @@ class SpecialOfferCard extends StatelessWidget {
             top: 10.h,
             right: 0.h,
             child: Container(
-              padding:
-              EdgeInsets.symmetric(horizontal: 10.h, vertical: 3.h),
+              padding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 3.h),
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.only(
@@ -260,11 +255,7 @@ class SpecialOfferCard extends StatelessWidget {
               child: Row(
                 spacing: 5.h,
                 children: [
-                  Icon(
-                    Icons.star,
-                    color: AppColors.starYellow,
-                    size: 25.h,
-                  ),
+                  Icon(Icons.star, color: AppColors.starYellow, size: 25.h),
                   Text(
                     rating.toString(),
                     style: AppTextStyles.instance.bodyLarge,

@@ -22,10 +22,10 @@ class MainPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<NavigationBloc>(),
       child: AutoTabsRouter(
-        routes: const [
+        routes:  [
           HomeRoute(),
-          FavouriteRoute(),
-          SettingsRoute(),
+          SearchRoute(),
+          SalonDetailsRoute(salonId: '12'),
           ProfileRoute(),
         ],
         builder: (context, child) {

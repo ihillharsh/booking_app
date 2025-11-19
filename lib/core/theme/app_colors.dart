@@ -43,6 +43,8 @@ class AppColors {
   //Utility
   static const Color shadowColor =  Color(0x40000000);
   static const Color starYellow =  Color(0xFFFFCE31);
+  static const Color sliderColor =  Color(0xFFF1F1F1);
+  static const Color greyButton =  Color(0xFFD9D9D9);
 
 
 

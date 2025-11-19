@@ -7,6 +7,7 @@ import 'package:app_initial_structure/gen/assets.gen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/widgets/buttons/primary_button.dart';
 import '../../../core/widgets/inputs/custom_text_field.dart';
 
 @RoutePage()
@@ -143,27 +144,13 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     // Sign In Button
-                    SizedBox(
+                    PrimaryButton(
+                      text: 'Sign In',
+                      onPressed: () {
+                        context.router.pushAndPopUntil(HomeRoute(), predicate: (route) => true,);
+                      },
                       width: double.infinity,
                       height: 56.h,
-                      child: ElevatedButton(
-                        onPressed: () {
-                         context.router.pushAndPopUntil(HomeRoute(), predicate: (route) => true,);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primary,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(28.h),
-                          ),
-                        ),
-                        child: Text(
-                          'Sign In',
-                          style: AppTextStyles.instance.button.copyWith(
-                            color: AppColors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
                     ),
                     // Create Account Button
                     SizedBox(

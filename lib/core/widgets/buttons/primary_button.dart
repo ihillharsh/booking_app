@@ -1,3 +1,5 @@
+import 'package:app_initial_structure/core/theme/app_text_styles.dart';
+import 'package:app_initial_structure/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import '../../theme/app_dimensions.dart';
 
@@ -7,6 +9,10 @@ class PrimaryButton extends StatelessWidget {
   final bool isLoading;
   final double? width;
   final double height;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
+  final Color? textColor;
+  final TextStyle? textStyle;
 
   const PrimaryButton({
     super.key,
@@ -15,6 +21,10 @@ class PrimaryButton extends StatelessWidget {
     this.isLoading = false,
     this.width,
     this.height = AppDimensions.buttonHeightMedium,
+    this.backgroundColor,
+    this.foregroundColor,
+    this.textStyle,
+    this.textColor,
   });
 
   @override
@@ -24,16 +34,29 @@ class PrimaryButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
-        child: isLoading
-            ? const SizedBox(
-                height: 20,
-                width: 20,
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        style: ButtonStyle(
+          foregroundColor: WidgetStateProperty.all(foregroundColor),
+          backgroundColor: WidgetStateProperty.all(backgroundColor),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.h)),
+          ),
+        ),
+        child:
+            isLoading
+                ? const SizedBox(
+                  height: 20,
+                  width: 20,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  ),
+                )
+                : Text(
+                  text,
+                  style:
+                      textStyle ??
+                      AppTextStyles.instance.button.copyWith(color: textColor),
                 ),
-              )
-            : Text(text),
       ),
     );
   }

@@ -22,6 +22,16 @@ class AppTheme {
         elevation: 0,
         centerTitle: true,
       ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: AppColors.black,
+        inactiveTrackColor: AppColors.sliderColor,
+        thumbColor: AppColors.black,
+        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7.h),
+        overlayShape: RoundSliderOverlayShape(overlayRadius: 0),
+        overlayColor: AppColors.transparent,
+        trackHeight: 5.h,
+        trackShape: RoundedRectSliderTrackShape(),
+      ),
       textTheme: TextTheme(
         displayLarge: AppTextStyles.instance.h1.copyWith(
           color: AppColors.textPrimaryLight,
@@ -66,15 +76,19 @@ class AppTheme {
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: AppColors.black,
-          selectedItemColor: AppColors.white,
-          unselectedItemColor: AppColors.whiteOpacity50
+        backgroundColor: AppColors.black,
+        selectedItemColor: AppColors.white,
+        unselectedItemColor: AppColors.whiteOpacity50,
       ),
       inputDecorationTheme: InputDecorationTheme(
         // filled: true,
         // fillColor: AppColors.black,
-        hintStyle: AppTextStyles.instance.bodyLarge.copyWith(color: AppColors.whiteOpacity50),
-        labelStyle: AppTextStyles.instance.bodyLarge.copyWith(color: AppColors.whiteOpacity50),
+        hintStyle: AppTextStyles.instance.bodyLarge.copyWith(
+          color: AppColors.whiteOpacity50,
+        ),
+        labelStyle: AppTextStyles.instance.bodyLarge.copyWith(
+          color: AppColors.whiteOpacity50,
+        ),
         prefixIconColor: AppColors.white,
         suffixIconColor: AppColors.white,
         border: OutlineInputBorder(
@@ -132,6 +146,16 @@ class AppTheme {
         elevation: 0,
         centerTitle: true,
       ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: AppColors.black,
+        inactiveTrackColor: AppColors.sliderColor,
+        thumbColor: AppColors.black,
+        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7.h),
+        overlayShape: RoundSliderOverlayShape(overlayRadius: 0),
+        overlayColor: AppColors.transparent,
+        trackHeight: 5.h,
+        trackShape: RoundedRectSliderTrackShape(),
+      ),
       textTheme: TextTheme(
         displayLarge: AppTextStyles.instance.h1.copyWith(
           color: AppColors.textPrimaryDark,
@@ -178,15 +202,19 @@ class AppTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColors.black,
         selectedItemColor: AppColors.white,
-        unselectedItemColor: AppColors.whiteOpacity50
+        unselectedItemColor: AppColors.whiteOpacity50,
       ),
       inputDecorationTheme: InputDecorationTheme(
         // filled: true,
         // fillColor: AppColors.black,
         suffixIconColor: AppColors.white,
         prefixIconColor: AppColors.white,
-        hintStyle: AppTextStyles.instance.bodyLarge.copyWith(color: AppColors.whiteOpacity50),
-        labelStyle: AppTextStyles.instance.bodyLarge.copyWith(color: AppColors.whiteOpacity50),
+        hintStyle: AppTextStyles.instance.bodyLarge.copyWith(
+          color: AppColors.whiteOpacity50,
+        ),
+        labelStyle: AppTextStyles.instance.bodyLarge.copyWith(
+          color: AppColors.whiteOpacity50,
+        ),
 
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.h),
