@@ -18,6 +18,7 @@ import '../../../features/restaurant_details/restaurant_details_page.dart';
 import '../../../features/restaurant_booking/schedule_page.dart';
 import '../../../features/restaurant_booking/choose_table_page.dart';
 import '../../../features/restaurant_booking/restaurant_payment_page.dart';
+import '../../../features/salon_booking/salon_booking_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -33,10 +34,10 @@ class AppRouter extends _$AppRouter {
     AutoRoute(page: OtpVerificationRoute.page),
     AutoRoute(page: ResetPasswordRoute.page),
     AutoRoute(page: ProfileDetailRoute.page),
-
     AutoRoute(page: ScheduleRoute.page),
     AutoRoute(page: ChooseTableRoute.page),
     AutoRoute(page: RestaurantPaymentRoute.page),
+    AutoRoute(page: SalonBookingRoute.page),
 
     AutoRoute(
       page: MainRoute.page,

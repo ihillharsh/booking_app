@@ -107,6 +107,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: RestaurantPaymentPage(restaurantId: args.restaurantId),
       );
     },
+    SalonBookingRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<SalonBookingRouteArgs>(
+          orElse: () =>
+              SalonBookingRouteArgs(salonId: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SalonBookingPage(salonId: args.salonId),
+      );
+    },
     SalonDetailsRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<SalonDetailsRouteArgs>(
@@ -411,6 +421,36 @@ class RestaurantPaymentRouteArgs {
   @override
   String toString() {
     return 'RestaurantPaymentRouteArgs{restaurantId: $restaurantId}';
+  }
+}
+
+/// generated route for
+/// [SalonBookingPage]
+class SalonBookingRoute extends PageRouteInfo<SalonBookingRouteArgs> {
+  SalonBookingRoute({
+    required String salonId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SalonBookingRoute.name,
+          args: SalonBookingRouteArgs(salonId: salonId),
+          rawPathParams: {'id': salonId},
+          initialChildren: children,
+        );
+
+  static const String name = 'SalonBookingRoute';
+
+  static const PageInfo<SalonBookingRouteArgs> page =
+      PageInfo<SalonBookingRouteArgs>(name);
+}
+
+class SalonBookingRouteArgs {
+  const SalonBookingRouteArgs({required this.salonId});
+
+  final String salonId;
+
+  @override
+  String toString() {
+    return 'SalonBookingRouteArgs{salonId: $salonId}';
   }
 }
 
