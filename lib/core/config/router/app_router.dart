@@ -14,6 +14,10 @@ import '../../../features/profile/presentation/profile_page.dart';
 import '../../../features/profile/presentation/profile_detail_page.dart';
 import '../../../features/search/search_page.dart';
 import '../../../features/salon_details/salon_details_page.dart';
+import '../../../features/restaurant_details/restaurant_details_page.dart';
+import '../../../features/restaurant_booking/schedule_page.dart';
+import '../../../features/restaurant_booking/choose_table_page.dart';
+import '../../../features/restaurant_booking/restaurant_payment_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -30,13 +34,17 @@ class AppRouter extends _$AppRouter {
     AutoRoute(page: ResetPasswordRoute.page),
     AutoRoute(page: ProfileDetailRoute.page),
 
+    AutoRoute(page: ScheduleRoute.page),
+    AutoRoute(page: ChooseTableRoute.page),
+    AutoRoute(page: RestaurantPaymentRoute.page),
+
     AutoRoute(
       page: MainRoute.page,
       children: [
         AutoRoute(page: HomeRoute.page),
         AutoRoute(page: SearchRoute.page),
         AutoRoute(page: SalonDetailsRoute.page),
-        AutoRoute(page: ProfileRoute.page),
+        AutoRoute(page: RestaurantDetailsRoute.page),
       ],
     ),
   ];

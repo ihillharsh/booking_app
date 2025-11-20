@@ -53,7 +53,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: showShadow ? 0.2 : 0,
       scrolledUnderElevation: 0,
       toolbarHeight: preferredSize.height,
-      title: _buildCenteredContent(context),
+      title:
+          (title != null || (title?.isNotEmpty == true))
+              ? _buildTitle(context)
+              : _buildCenteredContent(context),
+    );
+  }
+
+  Widget _buildTitle(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        _buildBackButton(context),
+        Center(
+          child: Text(
+            title!,
+            style: AppTextStyles.instance.h5.copyWith(color: AppColors.white),
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
     );
   }
 

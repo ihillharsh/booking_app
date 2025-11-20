@@ -129,3 +129,12 @@ class AppTextStyles {
     letterSpacing: 1.5,
   );
 }
+
+extension TextStyleModifiers on TextStyle {
+  TextStyle get black => copyWith(color: Colors.black);
+  TextStyle get white => copyWith(color: Colors.white);
+  TextStyle get primary => copyWith(color: AppColors.primary);
+  TextStyle get red => copyWith(color: Colors.red);
+  TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
+  TextStyle get semiBold => copyWith(fontWeight: FontWeight.w600);
+}

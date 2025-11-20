@@ -40,6 +40,7 @@ class AppImage extends StatelessWidget {
     this.margin,
     this.border,
     this.placeHolder,
+    this.greyOut = false,
   }) : imagePath =
            (imagePath == null || imagePath.isEmpty)
                ? Assets.images.noImageFound.path
@@ -56,6 +57,7 @@ class AppImage extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final BorderRadius? radius;
   final BoxBorder? border;
+  final bool greyOut;
 
   @override
   Widget build(BuildContext context) {
@@ -96,49 +98,49 @@ class AppImage extends StatelessWidget {
   }
 
   Widget _buildImageView() {
-    switch (imagePath!.imageType) {
+    Widget image;
+
+    switch (imagePath.imageType) {
       case ImageType.svg:
-        return SizedBox(
+        image = SizedBox(
           height: height,
           width: width,
           child: SvgPicture.asset(
-            imagePath!,
+            imagePath,
             height: height,
             width: width,
             fit: fit ?? BoxFit.contain,
             colorFilter:
                 color != null
-                    ? ColorFilter.mode(
-                      color ?? AppColors.transparent,
-                      BlendMode.srcIn,
-                    )
+                    ? ColorFilter.mode(color!, BlendMode.srcIn)
                     : null,
           ),
         );
+        break;
+
       case ImageType.file:
-        return Image.file(
-          File(imagePath!),
+        image = Image.file(
+          File(imagePath),
           height: height,
           width: width,
           fit: fit ?? BoxFit.cover,
           color: color,
         );
+        break;
+
       case ImageType.networkSvg:
-        return SvgPicture.network(
+        image = SvgPicture.network(
           imagePath,
           height: height,
           width: width,
           fit: fit ?? BoxFit.contain,
           colorFilter:
-              color != null
-                  ? ColorFilter.mode(
-                    color ?? AppColors.transparent,
-                    BlendMode.srcIn,
-                  )
-                  : null,
+              color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
         );
+        break;
+
       case ImageType.network:
-        return CachedNetworkImage(
+        image = CachedNetworkImage(
           height: height,
           width: width,
           fit: fit,
@@ -161,15 +163,32 @@ class AppImage extends StatelessWidget {
                 fit: fit ?? BoxFit.cover,
               ),
         );
+        break;
+
       case ImageType.png:
       default:
-        return Image.asset(
+        image = Image.asset(
           imagePath,
           height: height,
           width: width,
           fit: fit ?? BoxFit.cover,
           color: color,
         );
+        break;
     }
+
+    if (greyOut) {
+      image = ColorFiltered(
+        colorFilter: const ColorFilter.matrix(<double>[
+          0.2126, 0.7152, 0.0722, 0, 0,
+          0.2126, 0.7152, 0.0722, 0, 0,
+          0.2126, 0.7152, 0.0722, 0, 0,
+          0,      0,      0,      1, 0,
+        ]),
+        child: image,
+      );
+    }
+
+    return image;
   }
 }

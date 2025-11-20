@@ -201,6 +201,8 @@ class _HomePageState extends State<HomePage> {
                             rating: offer['rating'] as double,
                             name: offer['name'] as String,
                             isSalon: true,
+                            showDetails: true,
+                            discount: 10,
                             location: offer['location'] as String,
                           );
                         },

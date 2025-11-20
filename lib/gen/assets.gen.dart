@@ -54,6 +54,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/back-arrow.svg
   SvgGenImage get backArrow => const SvgGenImage('assets/icons/back-arrow.svg');
 
+  /// File path: assets/icons/date_selected_icon.svg
+  SvgGenImage get dateSelectedIcon =>
+      const SvgGenImage('assets/icons/date_selected_icon.svg');
+
   /// File path: assets/icons/discount.svg
   SvgGenImage get discount => const SvgGenImage('assets/icons/discount.svg');
 
@@ -76,6 +80,9 @@ class $AssetsIconsGen {
   /// File path: assets/icons/slon_icon.svg
   SvgGenImage get slonIcon => const SvgGenImage('assets/icons/slon_icon.svg');
 
+  /// File path: assets/icons/table.svg
+  SvgGenImage get table => const SvgGenImage('assets/icons/table.svg');
+
   /// File path: assets/icons/veg.svg
   SvgGenImage get veg => const SvgGenImage('assets/icons/veg.svg');
 
@@ -83,6 +90,7 @@ class $AssetsIconsGen {
   List<SvgGenImage> get values => [
         apple,
         backArrow,
+        dateSelectedIcon,
         discount,
         facebook,
         filter,
@@ -90,6 +98,7 @@ class $AssetsIconsGen {
         heart,
         restaurant,
         slonIcon,
+        table,
         veg
       ];
 }

@@ -80,7 +80,11 @@ class SpecialOfferCard extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   name,
-                                  style: AppTextStyles.instance.bodyLargeBold,
+                                  style:
+                                      AppTextStyles
+                                          .instance
+                                          .bodyLargeBold
+                                          .black,
                                   overflow: TextOverflow.visible,
                                   softWrap: true,
                                 ),
@@ -121,7 +125,7 @@ class SpecialOfferCard extends StatelessWidget {
                                     style:
                                         AppTextStyles
                                             .instance
-                                            .bodyMediumSemibold,
+                                            .bodyMediumSemibold.black,
                                     overflow: TextOverflow.visible,
                                     softWrap: true,
                                   ),

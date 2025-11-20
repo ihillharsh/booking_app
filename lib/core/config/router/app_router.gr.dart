@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    ChooseTableRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<ChooseTableRouteArgs>(
+          orElse: () =>
+              ChooseTableRouteArgs(restaurantId: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ChooseTablePage(restaurantId: args.restaurantId),
+      );
+    },
     FavouriteRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -77,6 +87,26 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ResetPasswordPage(),
       );
     },
+    RestaurantDetailsRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<RestaurantDetailsRouteArgs>(
+          orElse: () => RestaurantDetailsRouteArgs(
+              restaurantId: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: RestaurantDetailsPage(restaurantId: args.restaurantId),
+      );
+    },
+    RestaurantPaymentRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<RestaurantPaymentRouteArgs>(
+          orElse: () => RestaurantPaymentRouteArgs(
+              restaurantId: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: RestaurantPaymentPage(restaurantId: args.restaurantId),
+      );
+    },
     SalonDetailsRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<SalonDetailsRouteArgs>(
@@ -85,6 +115,16 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: SalonDetailsPage(salonId: args.salonId),
+      );
+    },
+    ScheduleRoute.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<ScheduleRouteArgs>(
+          orElse: () =>
+              ScheduleRouteArgs(restaurantId: pathParams.getString('id')));
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SchedulePage(restaurantId: args.restaurantId),
       );
     },
     SearchRoute.name: (routeData) {
@@ -112,6 +152,36 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [ChooseTablePage]
+class ChooseTableRoute extends PageRouteInfo<ChooseTableRouteArgs> {
+  ChooseTableRoute({
+    required String restaurantId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ChooseTableRoute.name,
+          args: ChooseTableRouteArgs(restaurantId: restaurantId),
+          rawPathParams: {'id': restaurantId},
+          initialChildren: children,
+        );
+
+  static const String name = 'ChooseTableRoute';
+
+  static const PageInfo<ChooseTableRouteArgs> page =
+      PageInfo<ChooseTableRouteArgs>(name);
+}
+
+class ChooseTableRouteArgs {
+  const ChooseTableRouteArgs({required this.restaurantId});
+
+  final String restaurantId;
+
+  @override
+  String toString() {
+    return 'ChooseTableRouteArgs{restaurantId: $restaurantId}';
+  }
 }
 
 /// generated route for
@@ -285,6 +355,66 @@ class ResetPasswordRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [RestaurantDetailsPage]
+class RestaurantDetailsRoute extends PageRouteInfo<RestaurantDetailsRouteArgs> {
+  RestaurantDetailsRoute({
+    required String restaurantId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          RestaurantDetailsRoute.name,
+          args: RestaurantDetailsRouteArgs(restaurantId: restaurantId),
+          rawPathParams: {'id': restaurantId},
+          initialChildren: children,
+        );
+
+  static const String name = 'RestaurantDetailsRoute';
+
+  static const PageInfo<RestaurantDetailsRouteArgs> page =
+      PageInfo<RestaurantDetailsRouteArgs>(name);
+}
+
+class RestaurantDetailsRouteArgs {
+  const RestaurantDetailsRouteArgs({required this.restaurantId});
+
+  final String restaurantId;
+
+  @override
+  String toString() {
+    return 'RestaurantDetailsRouteArgs{restaurantId: $restaurantId}';
+  }
+}
+
+/// generated route for
+/// [RestaurantPaymentPage]
+class RestaurantPaymentRoute extends PageRouteInfo<RestaurantPaymentRouteArgs> {
+  RestaurantPaymentRoute({
+    required String restaurantId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          RestaurantPaymentRoute.name,
+          args: RestaurantPaymentRouteArgs(restaurantId: restaurantId),
+          rawPathParams: {'id': restaurantId},
+          initialChildren: children,
+        );
+
+  static const String name = 'RestaurantPaymentRoute';
+
+  static const PageInfo<RestaurantPaymentRouteArgs> page =
+      PageInfo<RestaurantPaymentRouteArgs>(name);
+}
+
+class RestaurantPaymentRouteArgs {
+  const RestaurantPaymentRouteArgs({required this.restaurantId});
+
+  final String restaurantId;
+
+  @override
+  String toString() {
+    return 'RestaurantPaymentRouteArgs{restaurantId: $restaurantId}';
+  }
+}
+
+/// generated route for
 /// [SalonDetailsPage]
 class SalonDetailsRoute extends PageRouteInfo<SalonDetailsRouteArgs> {
   SalonDetailsRoute({
@@ -311,6 +441,36 @@ class SalonDetailsRouteArgs {
   @override
   String toString() {
     return 'SalonDetailsRouteArgs{salonId: $salonId}';
+  }
+}
+
+/// generated route for
+/// [SchedulePage]
+class ScheduleRoute extends PageRouteInfo<ScheduleRouteArgs> {
+  ScheduleRoute({
+    required String restaurantId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ScheduleRoute.name,
+          args: ScheduleRouteArgs(restaurantId: restaurantId),
+          rawPathParams: {'id': restaurantId},
+          initialChildren: children,
+        );
+
+  static const String name = 'ScheduleRoute';
+
+  static const PageInfo<ScheduleRouteArgs> page =
+      PageInfo<ScheduleRouteArgs>(name);
+}
+
+class ScheduleRouteArgs {
+  const ScheduleRouteArgs({required this.restaurantId});
+
+  final String restaurantId;
+
+  @override
+  String toString() {
+    return 'ScheduleRouteArgs{restaurantId: $restaurantId}';
   }
 }
 
