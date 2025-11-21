@@ -19,6 +19,7 @@ class AppColors {
   static const Color textSecondaryLight = Color(0xFF757575);
   static const Color textSecondaryDark = Color(0xFFB0B0B0);
   static const Color blackOpacity50 =  Color(0x7F000000);
+  static const Color blackOpacity25 =  Color(0x40000000);
   static const Color whiteOpacity50 =  Color(0x7FFFFFFF);
 
 
@@ -35,6 +36,9 @@ class AppColors {
   static const Color grey = Color(0xFF9E9E9E);
   static const Color greyLight = Color(0xFFE0E0E0);
   static const Color greyDark = Color(0xFF424242);
+  static const Color green = Color(0xFF43A047);
+  static const Color red = Color(0xFFC31D1D);
+
 
   //Transparent
   static const Color transparent = Color(0x00000000);

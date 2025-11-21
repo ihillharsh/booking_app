@@ -148,7 +148,6 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                 text: 'Reset Password',
                 onPressed: _handleVerifyOtp,
                 width: double.maxFinite,
-                height: 56.h,
               ),
               SizedBox(height: 24.h),
 

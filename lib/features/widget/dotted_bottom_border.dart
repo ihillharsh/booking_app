@@ -7,6 +7,7 @@ class DottedBottomBorder extends StatelessWidget {
   final Color color;
   final double strokeWidth;
   final double gap;
+  final double? padding;
 
   const DottedBottomBorder({
     super.key,
@@ -14,6 +15,7 @@ class DottedBottomBorder extends StatelessWidget {
     this.color = Colors.white,
     this.strokeWidth = 1,
     this.gap = 3.0,
+    this.padding
   });
 
   @override
@@ -21,7 +23,7 @@ class DottedBottomBorder extends StatelessWidget {
     return CustomPaint(
       painter: _DottedLinePainter(color: color, strokeWidth: strokeWidth, gap: gap),
       child: Padding(
-        padding: EdgeInsets.only(bottom: 5.h),
+        padding: EdgeInsets.only(bottom: padding ?? 5.h),
         child: child,
       ),
     );

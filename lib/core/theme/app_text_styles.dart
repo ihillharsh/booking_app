@@ -126,7 +126,8 @@ class AppTextStyles {
   TextStyle get overline => TextStyle(
     fontSize: 10.fSize,
     fontWeight: FontWeight.normal,
-    letterSpacing: 1.5,
+    letterSpacing: 0.5,
+    color: AppColors.white
   );
 }
 
@@ -135,6 +136,9 @@ extension TextStyleModifiers on TextStyle {
   TextStyle get white => copyWith(color: Colors.white);
   TextStyle get primary => copyWith(color: AppColors.primary);
   TextStyle get red => copyWith(color: Colors.red);
+  TextStyle  customColor(Color x) => copyWith(color: x);
   TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
   TextStyle get semiBold => copyWith(fontWeight: FontWeight.w600);
+  TextStyle  semiBoldCustom(Color x) => copyWith(fontWeight: FontWeight.w600,color: x);
+
 }

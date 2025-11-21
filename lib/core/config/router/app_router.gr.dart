@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    BookingHistoryRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BookingHistoryPage(),
+      );
+    },
     ChooseTableRoute.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<ChooseTableRouteArgs>(
@@ -162,6 +168,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [BookingHistoryPage]
+class BookingHistoryRoute extends PageRouteInfo<void> {
+  const BookingHistoryRoute({List<PageRouteInfo>? children})
+      : super(
+          BookingHistoryRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BookingHistoryRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

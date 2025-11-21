@@ -146,7 +146,6 @@ class _SignupPageState extends State<SignupPage> {
                         }
                       : null,
                   width: double.infinity,
-                  height: 56.h,
                 ),
                 SizedBox.shrink(),
                 // Or Sign up With

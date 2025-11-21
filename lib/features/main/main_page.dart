@@ -24,9 +24,9 @@ class MainPage extends StatelessWidget {
       child: AutoTabsRouter(
         routes: [
           HomeRoute(),
-          SearchRoute(),
-          SalonDetailsRoute(salonId: '12'),
-          RestaurantDetailsRoute(restaurantId: '23'),
+          FavouriteRoute(),
+          BookingHistoryRoute(),
+          ProfileRoute(),
         ],
         builder: (context, child) {
           final tabsRouter = AutoTabsRouter.of(context);

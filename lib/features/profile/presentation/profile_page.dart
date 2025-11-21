@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class ProfilePage extends StatelessWidget {
-  const ProfilePage();
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +62,7 @@ class ProfilePage extends StatelessWidget {
                 title: 'Earn Point',
                 onTap: () {
                   context.router.push(
-                    ProfileDetailRoute(fieldName: 'Earn Point'),
+                    SalonDetailsRoute(salonId: '12')
                   );
                 },
               ),

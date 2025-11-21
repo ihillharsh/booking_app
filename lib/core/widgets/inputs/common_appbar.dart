@@ -64,7 +64,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        _buildBackButton(context),
+      if (showBackButton) _buildBackButton(context),
         Center(
           child: Text(
             title!,

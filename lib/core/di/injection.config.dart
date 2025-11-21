@@ -24,6 +24,8 @@ import 'package:app_initial_structure/features/auth/domain/usecases/logout_useca
     as _i354;
 import 'package:app_initial_structure/features/auth/presentation/bloc/auth_bloc.dart'
     as _i283;
+import 'package:app_initial_structure/features/booking_history/bloc/booking_history_bloc.dart'
+    as _i390;
 import 'package:app_initial_structure/features/favourite/bloc/favourite_bloc.dart'
     as _i1049;
 import 'package:app_initial_structure/features/home/bloc/home_bloc.dart'
@@ -78,6 +80,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i599.RestaurantDetailsBloc>(
         () => _i599.RestaurantDetailsBloc());
     gh.factory<_i828.SalonBookingBloc>(() => _i828.SalonBookingBloc());
+    gh.factory<_i390.BookingHistoryBloc>(() => _i390.BookingHistoryBloc());
     gh.lazySingleton<_i220.AuthRepository>(() => _i857.AuthRepositoryImpl(
           gh<_i736.AuthRemoteDatasource>(),
           gh<_i668.SecureStorage>(),

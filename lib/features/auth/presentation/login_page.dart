@@ -150,7 +150,6 @@ class _LoginPageState extends State<LoginPage> {
                         context.router.pushAndPopUntil(HomeRoute(), predicate: (route) => true,);
                       },
                       width: double.infinity,
-                      height: 56.h,
                     ),
                     // Create Account Button
                     SizedBox(

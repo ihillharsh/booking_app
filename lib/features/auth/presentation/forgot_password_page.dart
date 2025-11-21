@@ -108,7 +108,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   text: 'Reset Password',
                   onPressed: _handleResetPassword,
                   width: double.infinity,
-                  height: 56.h,
                 ),
               ],
             ),
