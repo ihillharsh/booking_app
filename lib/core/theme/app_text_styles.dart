@@ -140,5 +140,6 @@ extension TextStyleModifiers on TextStyle {
   TextStyle get bold => copyWith(fontWeight: FontWeight.bold);
   TextStyle get semiBold => copyWith(fontWeight: FontWeight.w600);
   TextStyle  semiBoldCustom(Color x) => copyWith(fontWeight: FontWeight.w600,color: x);
+  TextStyle  regularCustom(Color x) => copyWith(fontWeight: FontWeight.normal,color: x);
 
 }

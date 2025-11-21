@@ -36,13 +36,13 @@ class _SplashPageState extends State<SplashPage> {
       create: (context) => getIt<SplashBloc>()..add(const CheckAuthStatus()),
       child: BlocListener<SplashBloc, SplashState>(
         listener: (context, state) {
-          context.router.replace(const HomeRoute());
+          // context.router.replace(const HomeRoute());
 
-          // if (state is Authenticated) {
-          //   context.router.replace(const MainRoute());
-          // } else if (state is Unauthenticated ) {
-          //   context.router.replace(const OnboardingRoute());
-          // }
+          if (state is Authenticated) {
+            context.router.replace(const MainRoute());
+          } else if (state is Unauthenticated ) {
+            context.router.replace(const OnboardingRoute());
+          }
         },
         child: Scaffold(
           backgroundColor: AppColors.white,

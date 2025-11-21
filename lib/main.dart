@@ -22,9 +22,10 @@ void main() async {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  static final appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
-    final appRouter = AppRouter();
 
     return BlocProvider(
       create: (context) => getIt<ProfileBloc>()..add(const LoadProfile()),

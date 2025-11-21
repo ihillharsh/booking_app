@@ -44,6 +44,8 @@ import 'package:app_initial_structure/features/profile/domain/usecases/change_th
     as _i319;
 import 'package:app_initial_structure/features/profile/presentation/bloc/profile_bloc.dart'
     as _i788;
+import 'package:app_initial_structure/features/profile/presentation/bloc/profile_detail_bloc.dart'
+    as _i821;
 import 'package:app_initial_structure/features/restaurant_details/bloc/restaurant_details_bloc.dart'
     as _i599;
 import 'package:app_initial_structure/features/salon_booking/bloc/salon_booking_bloc.dart'
@@ -81,6 +83,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i599.RestaurantDetailsBloc());
     gh.factory<_i828.SalonBookingBloc>(() => _i828.SalonBookingBloc());
     gh.factory<_i390.BookingHistoryBloc>(() => _i390.BookingHistoryBloc());
+    gh.factory<_i821.ProfileDetailBloc>(() => _i821.ProfileDetailBloc());
     gh.lazySingleton<_i220.AuthRepository>(() => _i857.AuthRepositoryImpl(
           gh<_i736.AuthRemoteDatasource>(),
           gh<_i668.SecureStorage>(),

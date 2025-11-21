@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # State Management
   flutter_bloc: ^8.1.3
   equatable: ^2.0.5
@@ -62,7 +62,8 @@ dependencies:
   
   # Asset Generation
   flutter_svg: ^2.0.9
-  iconify_flutter: ^0.0.7
+  iconify_flutter:
+    path: ./Iconify_custom
 
 dev_dependencies:
   flutter_gen_runner: ^5.6.0

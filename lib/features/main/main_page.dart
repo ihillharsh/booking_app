@@ -24,7 +24,7 @@ class MainPage extends StatelessWidget {
       child: AutoTabsRouter(
         routes: [
           HomeRoute(),
-          FavouriteRoute(),
+          SearchRoute(),
           BookingHistoryRoute(),
           ProfileRoute(),
         ],
@@ -50,11 +50,11 @@ class MainPage extends StatelessWidget {
                     ),
                     BottomNavigationBarItem(
                       icon: const Icon(Icons.search),
-                      label: l10n.favourite,
+                      label: 'Search',
                     ),
                     BottomNavigationBarItem(
                       icon: const Icon(Icons.calendar_month_rounded),
-                      label: l10n.settings,
+                      label: 'Booking',
                     ),
                     BottomNavigationBarItem(
                       icon: const Icon(Icons.person),

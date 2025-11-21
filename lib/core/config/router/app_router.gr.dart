@@ -31,6 +31,24 @@ abstract class _$AppRouter extends RootStackRouter {
         child: ChooseTablePage(restaurantId: args.restaurantId),
       );
     },
+    CustomerSupportRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CustomerSupportPage(),
+      );
+    },
+    EarnPointRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const EarnPointPage(),
+      );
+    },
+    FaqRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const FaqPage(),
+      );
+    },
     FavouriteRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -75,7 +93,10 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     ProfileDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<ProfileDetailRouteArgs>();
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<ProfileDetailRouteArgs>(
+          orElse: () => ProfileDetailRouteArgs(
+              fieldName: pathParams.getString('fieldName')));
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: ProfileDetailPage(fieldName: args.fieldName),
@@ -84,7 +105,7 @@ abstract class _$AppRouter extends RootStackRouter {
     ProfileRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProfilePage(),
+        child: const ProfilePage(),
       );
     },
     ResetPasswordRoute.name: (routeData) {
@@ -147,6 +168,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SearchPage(),
+      );
+    },
+    SelectPaymentMethodRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SelectPaymentMethodPage(),
       );
     },
     SettingsRoute.name: (routeData) {
@@ -212,6 +239,48 @@ class ChooseTableRouteArgs {
   String toString() {
     return 'ChooseTableRouteArgs{restaurantId: $restaurantId}';
   }
+}
+
+/// generated route for
+/// [CustomerSupportPage]
+class CustomerSupportRoute extends PageRouteInfo<void> {
+  const CustomerSupportRoute({List<PageRouteInfo>? children})
+      : super(
+          CustomerSupportRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CustomerSupportRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [EarnPointPage]
+class EarnPointRoute extends PageRouteInfo<void> {
+  const EarnPointRoute({List<PageRouteInfo>? children})
+      : super(
+          EarnPointRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'EarnPointRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [FaqPage]
+class FaqRoute extends PageRouteInfo<void> {
+  const FaqRoute({List<PageRouteInfo>? children})
+      : super(
+          FaqRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'FaqRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -336,6 +405,7 @@ class ProfileDetailRoute extends PageRouteInfo<ProfileDetailRouteArgs> {
   }) : super(
           ProfileDetailRoute.name,
           args: ProfileDetailRouteArgs(fieldName: fieldName),
+          rawPathParams: {'fieldName': fieldName},
           initialChildren: children,
         );
 
@@ -544,6 +614,20 @@ class SearchRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SearchRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SelectPaymentMethodPage]
+class SelectPaymentMethodRoute extends PageRouteInfo<void> {
+  const SelectPaymentMethodRoute({List<PageRouteInfo>? children})
+      : super(
+          SelectPaymentMethodRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SelectPaymentMethodRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
